@@ -46,7 +46,7 @@ h1,h2,h3{color:var(--ink);line-height:1.25;text-wrap:balance;margin:0;font-weigh
 /* HERO */
 .hero{background:radial-gradient(130% 90% at 72% 8%,#1C2E4C 0%,var(--hero1) 70%);color:var(--on-hero);}
 .hero .wrap{padding-block:clamp(40px,8vw,80px);}
-.logo{height:clamp(44px,8vw,60px);width:auto;margin-bottom:26px;filter:drop-shadow(0 4px 14px rgba(0,0,0,.4));}
+.logo{height:clamp(104px,20vw,150px);width:auto;margin-bottom:26px;filter:drop-shadow(0 4px 14px rgba(0,0,0,.4));}
 .hero .eyebrow{color:var(--green);}
 .hero h1{color:#fff;font-size:clamp(28px,6.4vw,50px);letter-spacing:-.02em;margin:14px 0 0;}
 .hero .lead{color:var(--on-hero-mut);font-size:clamp(15px,2.3vw,19px);max-width:30em;margin:18px 0 0;}
@@ -101,7 +101,7 @@ h1,h2,h3{color:var(--ink);line-height:1.25;text-wrap:balance;margin:0;font-weigh
 .req{color:var(--greenD);font-weight:800;margin-left:3px;}
 
 /* map + chips */
-.maprow{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:26px;align-items:start;}
+.maprow{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:26px;align-items:start;}
 .mapbox{position:relative;}
 .readout{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--muted);
   background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin-bottom:12px;}
@@ -112,11 +112,12 @@ h1,h2,h3{color:var(--ink);line-height:1.25;text-wrap:balance;margin:0;font-weigh
 .rg:hover{fill:#8FE9B4;}
 .rg:focus-visible{stroke:var(--navy);stroke-width:2;}
 .rg.sel{fill:var(--green);stroke:var(--sel-br);stroke-width:1.4;}
-.island .ishit{fill:transparent;stroke:var(--line);stroke-width:1;stroke-dasharray:3 3;}
+.island .ishit{fill:var(--surface);stroke:var(--line);stroke-width:1;stroke-dasharray:3 3;}
 .island .idot{fill:var(--region);stroke:var(--region-br);stroke-width:1;transition:fill .12s;}
 .island:hover .idot{fill:#8FE9B4;}
 .island.sel .idot{fill:var(--green);stroke:var(--sel-br);}
-.island .ilab{fill:var(--muted);font-size:13px;font-weight:700;text-anchor:middle;font-family:inherit;}
+.island .ilab{fill:var(--muted);font-size:11px;font-weight:700;text-anchor:middle;font-family:inherit;}
+.island .ilab.sm{font-size:9.5px;text-anchor:start;}
 .island.sel .ilab{fill:var(--greenD);}
 .maphint{font-size:12.5px;color:var(--muted);margin:10px 2px 0;}
 .chipwrap{display:flex;flex-wrap:wrap;gap:8px;}
@@ -182,9 +183,14 @@ h1,h2,h3{color:var(--ink);line-height:1.25;text-wrap:balance;margin:0;font-weigh
 .foot small{color:var(--muted);font-size:12px;}
 
 @media (max-width:760px){
+  .hero .wrap{text-align:center;}
+  .logo{margin-left:auto;margin-right:auto;height:clamp(110px,28vw,160px);}
+  .hero .lead{margin-left:auto;margin-right:auto;}
+  .offer{margin-left:auto;margin-right:auto;text-align:left;}
+  .hero-cta{justify-content:center;}
   .bgrid{grid-template-columns:1fr;}
   .maprow{grid-template-columns:1fr;gap:18px;}
-  .mapbox{max-width:360px;margin:0 auto;width:100%;}
+  .mapbox{max-width:440px;margin:0 auto;width:100%;}
   .stances{grid-template-columns:1fr;}
   .grid2{grid-template-columns:1fr;}
 }
@@ -258,7 +264,7 @@ h1,h2,h3{color:var(--ink);line-height:1.25;text-wrap:balance;margin:0;font-weigh
           <div class="maprow">
             <div class="mapbox">
               <div class="readout" id="readout"><span class="dot"></span><span id="readtext">지역을 선택하세요</span></div>
-              <svg id="kmap" viewBox="14 118 752 702" role="group" aria-label="대한민국 지역 지도" preserveAspectRatio="xMidYMid meet">
+              <svg id="kmap" viewBox="18 118 650 704" role="group" aria-label="대한민국 지역 지도" preserveAspectRatio="xMidYMid meet">
 <path class="rg" id="rg-seoul" data-group="region" data-value="seoul" data-name="서울특별시" d="M237.1,271.3L238,270.4L238.7,269L239.8,268L240.4,267.2L240.2,265.7L240.6,265.1L242.3,266.7L245.6,269.2L246.5,268.6L247.8,268.4L247.8,267.6L248.6,266.5L248.9,267.1L250,267L250.3,265.3L250.1,264.4L250.8,263.1L250.7,261.7L251.3,260.3L253.5,259.5L254.2,258.7L255.6,259.3L256.2,261.7L255.9,262.1L257.4,261.9L258.2,261.3L258.3,260.1L257.8,258.9L259,257.8L259,256L260.6,255.4L260.7,253.9L261.3,253.3L262.5,253.4L262.9,254.5L264.5,254.2L264.7,255.1L265.9,254.1L267.6,254L268,254.7L269.1,254.8L268.7,256L269.1,257.2L268.6,258.5L268.9,260.3L270.6,260.5L270.6,261.9L269.9,263.1L271,263.4L271.2,265.2L270.8,265.7L270.3,267.8L269.6,268.7L269.9,269.2L269.6,270.4L269.9,271.1L270.9,271L271.7,270.2L273.1,269.6L274.2,269.6L275.9,268.3L276.9,268L276.8,268.8L277.4,270.6L277.5,272.3L275.6,272.5L273.3,276.9L273.9,277.6L275.4,277.9L275,279.3L274.2,279.9L273.7,281.2L272.7,281.1L272.6,281.8L271.2,282.6L269.9,282.6L268.8,283.4L268.3,284.6L267.5,285.2L266.8,285L266.5,286.4L265,286.7L263.2,285.4L263.5,284.7L263.1,282.3L262.3,283.1L260.8,283.4L260,282L259.5,282.6L257.3,283.5L255.8,285.4L254,285.8L252.8,284.2L251,286L250,285.5L249.5,283.7L247.9,281.2L247.3,279.8L247.8,279.5L246.9,278.6L245.5,280.2L244.8,280.3L244.8,281.2L243.1,280.9L241.8,281.1L242.6,279.5L241.6,278.4L242.3,278.1L243.1,274.4L242.5,273L240.6,272.7L239.8,273.6L239.1,272.3L237.6,272.1Z" tabindex="0" role="button" aria-label="서울특별시"></path>
 <path class="rg" id="rg-busan" data-group="region" data-value="busan" data-name="부산광역시" d="M437.1,568L437.7,568.4L437.6,572L438.8,571.9L439.3,573.6L437.7,577.3L438.3,578L437.2,579.8L437.2,579.2L436.4,579.2L436.3,577.5L436.9,577.3L436.6,576.6L434.9,576.1L435.7,575.7L435.3,575L435.5,574L434.9,573L433.4,572.3L433.4,571.3L434.9,571.3L434.8,570.7L437.4,570.2L437.4,569.4L435.4,569.4ZM436.3,567.1L436.6,566.6L437.7,566.6L438.3,566.1L438.5,565.2L437.8,564.5L437.5,563.2L437,563.4L435.8,562.9L434.5,561.8L433.7,560L435.9,559.6L437,560.2L438.5,559.9L438.8,559.1L440.8,558.7L441.3,559.3L440.6,559.9L441.3,560.8L441.5,559.8L442.1,559.7L441.4,558L442.1,558.3L442.2,557L441.1,554.7L442.7,553.2L443.7,553.3L444.8,552.9L445.2,552.2L446,553L447.9,551.7L448.7,551.9L452.2,551.4L453.6,550.4L455.3,546L456.7,545.8L458.3,546.1L459.3,543.7L460.5,543.7L460.9,544.1L462.5,542.6L464.6,541.8L464.6,541L465.9,539.2L466,537.6L466.7,537.1L466.6,536.3L465.1,535L468.2,535.4L469.5,536.3L471,536.9L473,535.1L473,534L472.5,533.3L473.2,532.6L474.9,533.6L477.6,533.2L478,532.6L478.7,533L479.4,532.7L479.7,533.4L481.1,535.3L480.9,536.3L481.3,537L480.8,538.1L482.8,538.8L483.3,539.5L483,540.5L482,540.9L481.3,539.9L479.7,540.4L478.7,542.4L479,544L478.2,546.4L477.5,546.3L477.3,547.3L476.5,547.2L476.6,548L478.2,547.9L478.3,549.4L477.4,549.6L477.4,551.2L476.5,552.6L475.7,552L475.2,553.4L476,554.4L475.5,555.4L475.4,556.7L474.7,556.4L473.1,557.4L472.5,559.6L471.3,560.3L470.2,559.8L467.9,560.4L467.2,559.5L466.4,559.5L466.7,560.3L465.5,560.3L464.9,561.1L465.1,562L464.6,562.5L465.6,563L466.2,564.6L465.7,566.9L464.7,566.4L463.4,567.8L462.9,567.5L462.8,565.8L462.5,566.3L461,566.3L460.2,565.8L460.9,564.8L460.8,564.1L460,563.5L457.3,567.2L456.3,567.3L456.1,569.6L455.3,569.8L455.9,571.3L454.8,572.4L454.8,571.1L453.8,569.2L453,568.7L453.2,571.1L453.8,572.9L453,573.3L452.6,571.7L451.1,571.9L452,572.5L450.8,573.3L451.6,573.8L450.3,574.3L450.6,573.4L449.6,572.3L448.9,569L449.5,566.1L448.7,565.9L448.2,568.4L447.2,569.8L446.8,569.3L447.2,567L447.8,565.7L447.2,565.5L446.9,567.6L445.6,568L445.1,569.3L443.5,569.3L444.1,565.4L444.5,564.6L443.8,564.4L443,565.8L442.8,568L442.5,569.2L440.9,568.7L437.9,568.7ZM463.3,567.8L463.3,567.8L463.3,567.8Z" tabindex="0" role="button" aria-label="부산광역시"></path>
 <path class="rg" id="rg-daegu" data-group="region" data-value="daegu" data-name="대구광역시" d="M408.1,497.4L406.1,498.4L405.9,501.3L406.2,501.8L405.8,502.6L403.4,503.1L403.2,502.5L402.4,503L401.4,502.5L400,502.7L398.6,504.5L397.7,504.3L396.8,505.3L395.8,505.3L394,506.2L392.8,506L394.4,505.2L395.6,503.4L395.5,501.9L394.8,501L392.9,499.4L391.4,497.5L390.8,495.7L390.8,494.9L391.5,494.3L393.8,495.2L395.2,495.4L396.7,495.9L398,495.5L398.8,494.5L398.6,492.3L397.6,491.4L394.7,489.6L393.9,488.4L395.2,486.1L396.3,483.5L397.5,482.3L399.5,482.3L399.5,482.7L402.4,482.7L403.5,481.6L403.4,479.8L402.2,478.8L400.4,477.9L397.1,477.2L393.9,477.1L394,475.6L395.4,471.9L396.2,471.4L397.9,468.1L400.4,467.3L400.8,466.3L402.9,467.4L402.6,469.7L401.9,470.4L402.1,471.5L402.8,472.1L404.4,471.9L405.2,473.1L405.7,472.8L405.8,471.2L406.2,470.3L406.9,470.1L408.1,468.6L408.6,466.9L407.8,462.4L408.2,461.8L409.4,462.5L409.7,463.6L410.4,464.2L410.7,462.9L412.3,462.1L413.3,462.2L415.2,461.2L416.7,458.7L418.9,458.2L419.9,458.6L421.7,457.9L424.2,457.6L425,458.3L426.3,458.5L427.3,459.2L428,460.3L427.6,461.3L429.1,462.8L428.5,464.9L428.9,466.2L428.2,467.9L428.8,469.1L430,469.7L430.4,470.7L430.1,471.1L430.6,473L430.2,474.1L430.4,475.5L429.5,476.6L428,477.3L427.1,476.5L427.2,477.9L426.9,478.8L425.4,480.3L426.3,482.6L424.4,484.1L424.1,483.8L422.9,484.6L422.8,485.4L423.4,486.4L423.3,487.2L424.2,488.7L423.6,490.6L423.7,491.7L423,492.8L421.1,492.9L418.6,494.7L417.3,495L416.3,494.2L416.4,493L415.9,492.4L416.3,491L414.4,491L413.9,491.6L413,490.8L412.2,491.3L411.4,491.1L411.1,491.8L409.5,493.1L407.9,493.9L408.5,495L408.6,496.1Z" tabindex="0" role="button" aria-label="대구광역시"></path>
@@ -278,10 +284,11 @@ h1,h2,h3{color:var(--ink);line-height:1.25;text-wrap:balance;margin:0;font-weigh
 <path class="rg" id="rg-jeju" data-group="region" data-value="jeju" data-name="제주특별자치도" d="M188.8,798.2L189,799.2L188.5,798.9ZM185,764.8L185.2,765.5L184.4,765.5ZM184.6,764.1L184.6,764.1L184.6,764.1ZM250.2,752.8L250.2,752.8L250.2,752.8ZM233.6,747.5L233.6,747.5L233.6,747.5ZM250.2,752.8L251.4,753.8L251.2,755.6L250.3,756.2L250.4,756.9L251.3,757.7L252.5,757.8L252.3,759.7L253.1,758.8L252.9,757.7L253.5,757.6L253.6,758.7L254.5,759.3L254.3,759.8L253.4,759.1L252.3,760.4L252.2,761.6L253.6,762.7L252.9,763.6L252.3,763.1L252,762.1L251.6,762.4L250.9,765.5L250.3,766L250.7,767.2L248.5,768.1L246.9,770.4L247,771.5L246.2,772.4L245.9,773.4L244.6,774L245.2,774.9L243.3,777L242,776.9L241.1,777.6L238.1,777.1L237.1,778L237,778.7L234.5,780.4L234.1,780L232,780.6L230.6,781.2L228.5,781.6L226.6,780.8L226.9,781.4L225,781.8L224.9,782.8L222.9,783.6L222.8,784.6L220.9,785.4L220.1,784.6L218.8,784.2L218,784.4L218.2,785.2L217,784.6L217.5,785.4L216.2,784.6L214.5,784.9L213.4,784.7L212.1,785.9L210.4,785.6L209.1,786.2L208.6,786.7L207.6,785.8L207.4,784.8L206.6,784.6L204.9,785.3L203.9,785.1L203.4,784.3L202.4,784.2L199.9,785.5L198.4,786L197.8,785.4L196.4,785.2L195.3,785.4L194.9,784.7L193.9,784.9L192.8,786.3L191.7,786.9L191,788.8L191.4,789.6L190.4,789.3L189.2,790.1L188.1,789.4L188.5,788.8L187.6,788.3L187,787.3L186.2,786.9L185.5,785.4L184.1,784.4L182.4,784.1L180.5,782.5L180.2,781.5L179.2,780.7L179.2,779.8L178.4,778.7L179,777.8L178.7,776.9L179.1,775.9L178.6,775L178.5,773.9L179.1,773L180.3,772.4L180.5,771.2L181.8,770.1L182.3,770.2L183.4,769.1L183.6,768.3L184.5,767.4L185.5,767.5L185.8,766.7L187.1,766.1L187.3,765.1L188.3,764.2L188.2,762.2L189.3,762.1L189.9,761.3L190.9,761.2L192.1,760.5L192.9,759.2L193.1,758.1L194,758.5L196.8,757.7L197.6,756.9L198.6,757.1L200.2,755.8L201.1,756.4L202.3,756.3L202.7,755.7L203.6,755.7L206.6,754.9L206.6,754.3L208,753.6L209.7,753.3L209.9,752.5L210.7,752.1L212.7,752.7L213,752.3L214.4,752.5L215.8,751.7L216,752.2L218.5,751.3L219.5,751.6L220.8,750.2L221.3,750.5L222.3,750.1L224.3,750.4L225.3,748.1L226.1,748.4L227.3,749.6L228.2,749.3L228.8,748.5L229.1,749L230.5,748.4L232,748.2L233.6,747.5L234.3,748.2L235,747.8L236.6,747.8L236.7,746.9L238.4,746.9L240.2,748.1L241.7,747.4L243.1,747.7L243.2,749.6L244.3,750.7L245.4,750.8L246.1,751.6L246.8,751.2L248.3,751.1L250.6,752.2Z" tabindex="0" role="button" aria-label="제주특별자치도"></path>
 
 <g class="rg island" id="rg-ulleung" data-group="region" data-value="ulleung" data-name="울릉도·독도" tabindex="0" role="button" aria-label="울릉도 독도">
-  <rect class="ishit" x="612" y="260" width="150" height="56" rx="10"></rect>
-  <circle class="idot" cx="638" cy="280" r="10"></circle>
-  <circle class="idot sm" cx="732" cy="310" r="6"></circle>
-  <text class="ilab" x="685" y="254">울릉·독도</text>
+  <rect class="ishit" x="568" y="252" width="98" height="74" rx="10"></rect>
+  <circle class="idot" cx="600" cy="280" r="8"></circle>
+  <circle class="idot sm" cx="626" cy="300" r="4.5"></circle>
+  <text class="ilab" x="600" y="266">울릉도</text>
+  <text class="ilab sm" x="634" y="304">독도</text>
 </g>
 </svg>
               <p class="maphint">도 단위 · 광역시 이상 도시 · 제주 · 울릉도(독도 포함) 기준</p>
@@ -299,7 +306,7 @@ h1,h2,h3{color:var(--ink);line-height:1.25;text-wrap:balance;margin:0;font-weigh
 
         <div class="q">
           <label class="qlab">2. 성별<span class="req">*</span></label>
-          <div class="choices"><button type="button" class="chip" data-group="gender" data-value="남성">남성</button><button type="button" class="chip" data-group="gender" data-value="여성">여성</button><button type="button" class="chip" data-group="gender" data-value="선택 안 함">선택 안 함</button></div>
+          <div class="choices"><button type="button" class="chip" data-group="gender" data-value="남성">남성</button><button type="button" class="chip" data-group="gender" data-value="여성">여성</button></div>
         </div>
 
         <div class="q">
